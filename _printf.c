@@ -6,7 +6,10 @@ int _printf(const char *format, ...)
 {
     va_list arr;
     int i, len = 0;
-
+    if (!format)
+        exit(98);
+    if (*format == '%' && *(format + 1) == 0)
+        exit(98);
     va_start(arr, format);
     for (i = 0; format[i] != '\0'; i++)
     {
@@ -24,11 +27,27 @@ int _printf(const char *format, ...)
 
             }
             else if (format[i] == 's') {
-                char *str = va_arg(arr, char *);
-                while (*str != '\0') {
-                    putchar(*str);
-                    len++;
-                    str++;
+
+                int i = 0;
+                int z = 0;
+                if (!format)
+                {
+                    putchar('(');
+                    putchar('n');
+                    putchar('u');
+                    putchar('l');
+                    putchar('l');
+                    putchar(')');
+                    z = z + 6;
+                }
+                else
+                {
+                    while (*(format + i) != '\0')
+                    {
+                        putchar(*(format + i));
+                        i++;
+                        z++;
+                    }
                 }
             }
             else if (format[i] == '%') {
