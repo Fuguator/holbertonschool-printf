@@ -2,22 +2,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
-
 int _printf(const char *format, ...)
 {
-	va_list arr;
- 	int i, len;
+    va_list arr;
+    int i, len = 0;
 
-	len = 0;
-	va_start(arr, format);
-	for (i = 0; format[i] != '\0'; i++)
+    va_start(arr, format);
+    for (i = 0; format[i] != '\0'; i++)
     {
         if (format[i] != '%')
         {
             putchar(format[i]);
+            len++;
         }
-        if (format[i] == '%')
-        {
+        else {
             i++;
             if (format[i] == 'c')
             {
@@ -33,9 +31,14 @@ int _printf(const char *format, ...)
                     str++;
                 }
             }
-            else if (format[i] == '%')
+            else if (format[i] == '%') {
+                putchar('%');
+                len++;
+            }
+            else
             {
                 putchar('%');
+                putchar(format[i]);
                 len+=2;
             }
         }
