@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] == 'c')
 		{
 			_putchar(va_arg(arr, int));
-			i+=2;
+			i += 2;
 			len++;
 		}
 		else if (format[i] == '%' && format[i + 1] == 's')
@@ -36,8 +36,8 @@ int _printf(const char *format, ...)
 				_putchar('l');
 				_putchar('l');
 				_putchar(')');
-				len+=6;
-				i+=2;
+				len += 6;
+				i += 2;
 			}
 			else
 			{
@@ -46,14 +46,18 @@ int _printf(const char *format, ...)
 					_putchar(str[j]);
 					len++;
 				}
-				i+=2;
+				i += 2;
 			}
 		}
-		else if(format[i] == '%' && format[i + 1] == '%')
+		else if (format[i] == '%' && format[i + 1] == '%')
 		{
 			_putchar('%');
-			i+=2;
+			i += 2;
 			len++;
+		}
+		else if (format[i] == '%')
+		{
+			i++;
 		}
 		else
 			_putchar(format[i]), len++, i++;
