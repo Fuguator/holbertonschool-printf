@@ -29,12 +29,31 @@ int _printf(const char *format, ...)
 		else if (format[i] == '%' && format[i + 1] == 's')
 		{
 			char *str = va_arg(arr, char *);
-			for (j = 0; str[j] != '\0'; j++)
+			if (str == NULL)
 			{
-				_putchar(str[j]);
-				len++;
+				_putchar('(');
+				_putchar('n');
+				_putchar('u');
+				_putchar('l');
+				_putchar('l');
+				_putchar(')');
+				i+=2;
 			}
-			i+=2;
+			else
+			{
+				for (j = 0; str[j] != '\0'; j++)
+				{
+					_putchar(str[j]);
+					len++;
+				}
+				i+=2;
+			}
+		}
+		else if(format[i] == '%' && format[i + 1] == '%')
+		{
+		_putchar('%');
+		i+=2;
+		len++;
 		}
 		else
 		{
