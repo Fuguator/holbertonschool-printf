@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
 				_putchar('l');
 				_putchar('l');
 				_putchar(')');
+				len+=6;
 				i+=2;
 			}
 			else
