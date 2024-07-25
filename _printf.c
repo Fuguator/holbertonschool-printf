@@ -2,66 +2,47 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
+/**
+ * _printf - Produces output according to a format
+ * @format: Is a character string. The format string
+ * is composed of zero or more directives
+ *
+ * Return: The number of characters printed (excluding
+ * the null byte used to end output to strings)
+ **/
 int _printf(const char *format, ...)
 {
-    va_list arr;
-    int i, len = 0;
-    if (!format)
-        exit(98);
-    if (*format == '%' && *(format + 1) == 0)
-        exit(98);
-    va_start(arr, format);
-    for (i = 0; format[i] != '\0'; i++)
-    {
-        if (format[i] != '%')
-        {
-            putchar(format[i]);
-            len++;
-        }
-        else {
-            i++;
-            if (format[i] == 'c')
-            {
-                putchar(va_arg(arr, int));
-                len++;
+	va_list arr;
+	int i, j, len;
 
-            }
-            else if (format[i] == 's') {
-
-                int i = 0;
-                int z = 0;
-                if (!format)
-                {
-                    putchar('(');
-                    putchar('n');
-                    putchar('u');
-                    putchar('l');
-                    putchar('l');
-                    putchar(')');
-                    z = z + 6;
-                }
-                else
-                {
-                    while (*(format + i) != '\0')
-                    {
-                        putchar(*(format + i));
-                        i++;
-                        z++;
-                    }
-                }
-            }
-            else if (format[i] == '%') {
-                putchar('%');
-                len++;
-            }
-            else
-            {
-                putchar('%');
-                putchar(format[i]);
-                len+=2;
-            }
-        }
-    }
-    va_end(arr);
-    return len;
+	i = 0;
+	len = 0;
+	va_start(arr, format);
+	while (format[i] != '\0')
+	{
+		if (format[i] == '%' && format[i + 1] == 'c')
+		{
+			_putchar(va_arg(arr, int));
+			i+=2;
+			len++;
+		}
+		else if (format[i] == '%' && format[i + 1] == 's')
+		{
+			char *str = va_arg(arr, char *);
+			for (j = 0; str[j] != '\0'; j++)
+			{
+				_putchar(str[j]);
+				len++;
+			}
+			i+=2;
+		}
+		else
+		{
+			_putchar(format[i]);
+			len++;
+			i++;
+		}
+	}
+	va_end(arr);
+	return (len);
 }
