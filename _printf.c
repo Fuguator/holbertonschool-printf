@@ -55,7 +55,7 @@ int _printf(const char *format, ...)
 			i += 2;
 			len++;
 		}
-		else if (format[i] == '%')
+		else if (format[i] == '%'  && format[i + 1] == '\0')
 		{
 			_putchar('%');
 			len++;
