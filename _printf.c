@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_start(arr, format);
 
 	if (!format)
-		return (-1);
+		exit(-1);
 
 	for (; *(format + i) != '\0' && format != NULL; i++)
 	{
