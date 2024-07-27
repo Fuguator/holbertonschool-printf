@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			else if (format[i + 1] == 's')
 				print_s(&len, va_arg(arr, char *));
 			else if (format[i + 1] == 'i' || format[i + 1] == 'd')
-				print_i_and_d(&len, va_arg(arr, int));
+				print_i_and_d(&len, arr);
 			else if (format[i + 1] == '%')
 				_putchar('%'), len++;
 			else if (format[i + 1] == '\0')

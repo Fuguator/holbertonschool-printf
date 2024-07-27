@@ -18,7 +18,7 @@ int print_i_and_d(int *len, va_list a)
 	for (; (num / i) / 10 != 0; i *= 10)
 		(*len)++;
 	for (; i != 1; i /= 10)
-		_puthcar('0' + (num / i)), num %= i;
+		_putchar('0' + (num / i)), num %= i;
 
 	_putchar('0' + (num % 10));
 	(*len)++;
