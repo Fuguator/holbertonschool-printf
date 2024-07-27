@@ -1,0 +1,29 @@
+#!/bin/bash
+.TH _printf(1)
+.SH NAME
+\fB_printf\fP - formatted output conversion
+.SH SYNOPSIS
+_printf FORMAT [ARGUMENT]...
+.SH DESCRIPTION
+The printf utility formats and prints its arguments, under control of the FORMAT string.
+FORMAT is a character string, which includes three types of objects: plain characters, escape sequences, and format specifiers. The format specifiers are introduced by the '%' character, and cause subsequent arguments to be formatted and printed according to the specifier.
+    The following format specifiers are supported:
+    %d   Print an integer.
+    %f   Print a floating-point number.
+    %c   Print a character.
+    %s   Print a string.
+.SH RETURN VALUE
+Upon successful completion, _printf returns the number of characters written. Otherwise, a negative number is returned to indicate an error.
+.SH EXAMPLES
+Basic usage:
+       _printf("Hello, World!\n")
+    Formatting an integer:
+       _printf("The value is %d\n", 42)
+    Formatting a floating-point number:
+       _printf("Pi is approximately %f\n", 3.14159)
+    Formatting a character:
+       _printf("character: %c\n", "a")
+    Formatting a string:
+       _printf("Name: %s\n", "Alice")
+.SH AUTHORS
+Written by Rahman and Fuad
