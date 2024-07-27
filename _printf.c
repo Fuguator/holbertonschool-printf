@@ -11,6 +11,9 @@ int _printf(const char *format, ...)
 
 	va_start(arr, format);
 
+	if (!format)
+		exit(98);
+
 	for (; *(format + i) != '\0' && format != NULL; i++)
 	{
 		if (format[i] == '%')
