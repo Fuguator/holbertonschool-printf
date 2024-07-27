@@ -7,6 +7,9 @@
  */
 int print_c(int *len, char a)
 {
-	!a ? write(1, "(null)", 6), *len += 6 : write(1, &a, 1), (*len)++;
+	if (!a)
+		write(1, "(null)", 6), *len += 6;
+	else
+		write(1, &a, 1), (*len)++;
 	return (*len);
 }
