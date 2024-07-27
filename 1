@@ -1,19 +1,17 @@
 #include "main.h"
 /**
- * _printf - immitates printf function
- * @format: may be c, s, i and so on
- * Return: length of string
+ * 
  */
 int _printf(const char *format, ...)
 {
 	int i = 0, len = 0;
 	va_list arr;
-
+	
 	va_start(arr, format);
-
+	
 	if (!format)
 		return (-1);
-
+	
 	for (; *(format + i) != '\0'; i++)
 	{
 		if (format[i] == '%')
