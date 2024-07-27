@@ -19,11 +19,11 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == 'c')
-				print_c(&len, va_arg(arr, int);
+				print_c(&len, va_arg(arr, int));
 			else if (format[i + 1] == 's')
-				print_s(&len, va_arg(arr, char *);
+				print_s(&len, va_arg(arr, char *));
 			else if (format[i + 1] == 'i' || format[i + 1] == 'd')
-				print_i(&len, va_arg(arr, int);
+				print_i(&len, va_arg(arr, int));
 			else if (format[i + 1] == '%')
 				_putchar('%'), len++;
 			else if (format[i + 1] == '\0')
