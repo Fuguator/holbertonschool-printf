@@ -1,3 +1,3 @@
 README file
-sala
+salam
 
