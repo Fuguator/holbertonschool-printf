@@ -4,7 +4,7 @@
  * print_c - prints a char
  * @len: length of string
  * @a: varue to be printed
- * @return: length
+ * @Return: int
  */
 int print_c(int *len, char a)
 {
