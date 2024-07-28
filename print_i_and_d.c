@@ -3,7 +3,7 @@
  * print_i_and_d - prints int and decimals
  * @len: length of string
  * @a: int/d
- * Return: int
+ * Return: length
  */
 int print_i_and_d(int *len, va_list a)
 {
