@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == 'c')
-				print_c(&len, va_arg(arr, int));
+				(unsigned int)print_c(&len, va_arg(arr, int));
 			else if (format[i + 1] == 's')
 				print_s(&len, va_arg(arr, char *));
 			else if (format[i + 1] == 'i' || format[i + 1] == 'd')
