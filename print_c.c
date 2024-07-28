@@ -6,7 +6,7 @@
  * @a: varue to be printed
  * @return: length
  */
-int print_c(int *len, char a)
+void print_c(int *len, char a)
 {
 	if (a == '\0')
 		return (NULL);
