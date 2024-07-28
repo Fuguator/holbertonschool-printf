@@ -11,7 +11,7 @@ int print_i_and_d(int *len, va_list a)
 	int num = va_arg(a, int);
 
 	if (num < 0)
-	{    
+	{
 		_putchar('-');
 		num = -num;
 		(*len)++;
