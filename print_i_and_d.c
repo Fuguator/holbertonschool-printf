@@ -8,7 +8,7 @@
 int print_i_and_d(int *len, va_list a)
 {
 	unsigned int i = 1;
-	num = va_arg(a, int);
+	int num = va_arg(a, int);
 
 	if (num < 0)
 	{
