@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 /**
  * print_c - prints a char
  * @len: length of string
@@ -8,7 +9,7 @@
 int print_c(int *len, char a)
 {
 	if (a == '\0')
-		return ('\0');
+		return (NULL);
 	else if (!a)
 		write(1, "(null)", 6), *len += 6;
 	else
