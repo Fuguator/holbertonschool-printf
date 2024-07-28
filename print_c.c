@@ -8,7 +8,6 @@
  */
 int print_c(int *len, char a)
 {
-	if (a)
-		write(1, &a, 1), (*len)++;
+	write(1, &a, 1), (*len)++;
 	return (*len);
 }
